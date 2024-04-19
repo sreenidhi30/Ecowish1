@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="cart.css"/>
+    <link rel="stylesheet" href="home.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <div class="main-container">
+        <nav class="navbar navbar-expand-lg " id="navbar1">
+            <div class="container-fluid">
+                <header>
+                    <a class="navbar-brand" href="file:///C:/Users/user/FC/fc/home.html#about" > <img src="Logo.jpg" alt="Clickable Image"></a>
+                  </header>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-expanded="false">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link"  href="file:///C:/Users/user/FC/fc/home.html">Home</a>
+                        </li> 
+                        <li class="nav-item">
+                            <a class="nav-link"  href="#about">About</a>
+                        </li> 
+                        <li class="nav-item">
+                            <a class="nav-link"  href="product.html">Product</a>
+                        </li> 
+                        <li class="nav-item">
+                            <a class="nav-link" href="cart.html">Cart</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link"  href="#container-2">Contact</a>
+                        </li> 
+                    </ul>
+                    <button class="btn" onclick="SignOut()">Sign Out</button>
+                </div>
+            </div>
+        </nav>
+
+        <section id="cart" class="cart">
+            <table width="100%">
+                <thead>
+                    <tr>
+                        <td>Remove</td>
+                        <td>Image</td>
+                        <td>Product</td>
+                        <td>Price</td>
+                        <td>Quantity</td>
+                        <td>Subtotal</td>
+                       
+                    </tr>
+                </thead>
+                <tbody id="cart-items"></tbody>
+            </table>
+        </section>
+
+        <section class="cart">
+            <div id="coupon">
+                <h3>Apply Coupon</h3>
+                <div>
+                    <input type="text" placeholder="Enter Your Coupon">
+                    <button class="btn-primary">Apply</button>
+                </div>
+
+            </div>
+            <div id="subtotal">
+            <h3>Cart Total</h3>
+            <table>
+                <tr>
+                    <td>Cart Subtotal</td>
+                    <td id="cart-subtotal">0</td>
+                </tr>
+                <tr>
+                    <td>Shipping</td>
+                    <td>Free</td>
+                </tr>
+                <tr>
+                    <td><strong>Total</strong></td>
+                    <td id="cart-total">0</td>
+                </tr>
+            </table>
+            <a href="file:///C:/Users/user/FC/fc/payment.html"><button>Proceed to checkout</button></a>
+        </div>
+        </section>
+
+        <footer>
+            <div id="container-2" class="container-2">
+                <div class="footer-container">
+                    <h3>Contact Us</h3>
+                    <p>Email: Ecowish@gmail.com</p>
+                    <p>Phone: +91 9391004404</p>
+                    <p>Address: KARE,krishnankoil,virudhnagar,Tamilnadu.</p>
+                </div>
+                <div class="footer-container">
+                    <h3>Quick Links</h3>
+                     <ul class="list">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#product">Product</a></li>
+                        <li><a href="#container-2">Contact</a></li>
+                     </ul>
+                </div>
+                <div class="footer-container">
+                    <h3>Follow Us</h3>
+                    <ul class="social-icons">
+                     <li><a href=""><i class="bi bi-facebook"></i></a></li>
+                     <li><a href=""><i class="bi bi-twitter"></i></a></li>
+                     <li><a href=""><i class="bi bi-instagram"></i></a></li>
+                     <li><a href=""><i class="bi bi-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bottom-bar">
+                <p>&copy; 2024 ECOWISH. All rights reserved</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        function SignOut() {
+            window.location.replace("file:///C:/Users/user/FC/fc/sign%20in.html");
+        }
+
+function renderCartItems() {
+    const cartItemsContainer = document.getElementById('cart-items');
+    const cartSubtotalElement = document.getElementById('cart-subtotal');
+    const cartTotalElement = document.getElementById('cart-total');
+
+    const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+
+    cartItemsContainer.innerHTML = '';
+
+    if (cartItems.length === 0) {
+        cartItemsContainer.innerHTML = '<tr><td colspan="6">Your cart is empty</td></tr>';
+        cartSubtotalElement.textContent = '0.00';
+        cartTotalElement.textContent = '0.00';
+        return; 
+    }
+
+    let cartSubtotal = 0;
+    cartItems.forEach(item => {
+        const row = document.createElement('tr');
+        const quantity = item.quantity || 1;
+        const subtotal = item.price * quantity;
+        cartSubtotal += subtotal;
+
+        row.innerHTML = `
+            <td><a href="#" onclick="removeItem('${item.productName}')"><i class="bi bi-x-circle-fill"></i></a></td>
+            <td><img src='${item.image}'/></td>
+            <td>${item.productName}</td>
+            <td>${item.price}</td>
+            <td><input type="number" value="${quantity}" min="1" onchange="updateQuantity(this, '${item.productName}', ${item.price})"></td>
+            <td class="subtotal">${subtotal.toFixed(2)}</td>
+        `;
+        cartItemsContainer.appendChild(row);
+    });
+
+    cartSubtotalElement.textContent = cartSubtotal.toFixed(2);
+    cartTotalElement.textContent = cartSubtotal.toFixed(2); 
+}
+
+
+function updateQuantity(input, productName, price) {
+    const newQuantity = parseInt(input.value);
+    const subtotalElement = input.parentElement.nextElementSibling;
+
+    const newSubtotal = price * newQuantity;
+    subtotalElement.textContent = newSubtotal.toFixed(2);
+
+    const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    const updatedCartItems = cartItems.map(item => {
+        if (item.productName === productName) {
+            return { ...item, quantity: newQuantity };
+        }
+        return item;
+    });
+    localStorage.setItem('cart', JSON.stringify(updatedCartItems));
+
+    const cartSubtotal = updatedCartItems.reduce((total, item) => {
+        return total + (item.price * item.quantity);
+    }, 0);
+
+    const cartSubtotalElement = document.getElementById('cart-subtotal');
+    const cartTotalElement = document.getElementById('cart-total');
+    cartSubtotalElement.textContent = cartSubtotal.toFixed(2);
+    cartTotalElement.textContent = cartSubtotal.toFixed(2);
+}
+
+        function removeItem(productName) {
+            let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+
+            cartItems = cartItems.filter(item => item.productName !== productName);
+
+            localStorage.setItem('cart', JSON.stringify(cartItems));
+
+            renderCartItems();
+        }
+        window.addEventListener('DOMContentLoaded', renderCartItems);
+    </script>
+</body>
+</html>

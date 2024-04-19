@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="product.css">
+    <link rel="stylesheet" href="home.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg " id="navbar1">
+        <div class="container-fluid">
+            <header>
+                <a class="navbar-brand" href="file:///C:/Users/user/FC/fc/home.html#about" > <img src="Logo.jpg" alt="Clickable Image"></a>
+              </header>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-expanded="false">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item">
+                <a class="nav-link"  href="file:///C:/Users/user/FC/fc/home.html">Home</a>
+              </li> 
+              <li class="nav-item">
+                <a class="nav-link"  href="home.html #container-2">About</a>
+              </li> 
+              <li class="nav-item">
+                <a class="nav-link"  href="product.html">Product</a>
+              </li> 
+              <li class="nav-item">
+                <a class="nav-link" href="cart.html">Cart</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link"  href="home.html #container-2">Contact</a>
+              </li> 
+            </ul>
+            <button class="btn" onclick="SignOut()">Sign Out</button>
+            </a>
+          </div>
+        </div>
+      </nav>
+
+    <h2>AVAILABLE PRODUCTS</h2>
+    <div class="products">
+
+
+       <div class="Content">
+        <img src="pic1.jpg">
+        <h3>Candle Holder</h3>
+        <p>This is of measurement 5cm height and 3cm width</p>
+        <h6>₹ 80.0</h6>
+        <ul>
+            <li><i class="fa fa-star checked"></i></li>
+            <li><i class="fa fa-star checked"></i></li>
+            <li><i class="fa fa-star checked"></i></li>
+            <li><i class="fa fa-star checked"></i></li>
+            <li><i class="fa fa-star checked"></i></li>
+        </ul>
+        <div class="buttons">
+            <a class="buy" href="file:///C:/Users/user/FC/fc/payment.html"><button class="buy-now-button">Buy Now</button></a>
+            <button class="cart" onclick="addToCart('Candle Holder', 80.0,'pic1.jpg')">Add to cart</button>
+        </div>
+       </div> 
+
+       
+       <div class="Content">
+        <img src="pic2.jpg">
+        <h3>Fruit basket</h3>
+        <p>Its capacity to hold 1kg of fruits</p>
+        <h6>₹ 120.0</h6>
+        <ul>
+            <li><i class="fa fa-star checked"></i></li>
+            <li><i class="fa fa-star checked"></i></li>
+            <li><i class="fa fa-star checked"></i></li>
+            <li><i class="fa fa-star checked"></i></li>
+            <li><i class="fa fa-star"></i></li>
+        </ul>
+        <div class="buttons">
+            <a class="buy" href="file:///C:/Users/user/FC/fc/payment.html"><button class="buy-now-button">Buy Now</button></a>
+            <button class="cart" onclick="addToCart('Fruit basket', 120.0,'pic2.jpg')">Add to cart</button>
+        </div>
+       </div>
+
+
+       <div class="Content">
+        <img src="pic3.jpg">
+        <h3>Light hanger</h3>
+        <p>a bulb holder for home decor</p>
+        <h6>₹ 100.0</h6>
+        <ul>
+            <li><i class="fa fa-star checked"></i></li>
+            <li><i class="fa fa-star checked"></i></li>
+            <li><i class="fa fa-star checked"></i></li>
+            <li><i class="fa fa-star checked"></i></li>
+            <li><i class="fa fa-star checked"></i></li>
+        </ul>
+        <div class="buttons">
+        <a class="buy" href="file:///C:/Users/user/FC/fc/payment.html"><button class="buy-now-button">Buy Now</button></a>
+        <button class="cart" onclick="addToCart('Light hanger', 100.0,'pic3.jpg')">Add to cart</button>
+       </div> 
+    </div>
+
+
+       <div class="Content">
+        <img src="pic4.jpg">
+        <h3> Mini basket</h3>
+        <p>A beautifully carved bowl with rope handle design, capacity to hold 100gm</p>
+        <h6>₹ 50.0</h6>
+        <ul>
+            <li><i class="fa fa-star checked"></i></li>
+            <li><i class="fa fa-star checked"></i></li>
+            <li><i class="fa fa-star checked"></i></li>
+            <li><i class="fa fa-star"></i></li>
+            <li><i class="fa fa-star"></i></li>
+        </ul>
+        <div class="buttons">
+        <a class="buy" href="file:///C:/Users/user/FC/fc/payment.html"><button class="buy-now-button">Buy Now</button></a>
+        <button class="cart" onclick="addToCart('Mini Basket', 50.0,'pic4.jpg')">Add to cart</button>
+       </div>
+    </div>
+
+
+       <div class="Content">
+        <img src="pic6.jpg">
+        <h3>Plate</h3>
+        <p>It has handles to hold & it is of 6cm radius</p>
+        <h6>₹ 100.0</h6>
+        <ul>
+            <li><i class="fa fa-star checked"></i></li>
+            <li><i class="fa fa-star checked"></i></li>
+            <li><i class="fa fa-star checked"></i></li>
+            <li><i class="fa fa-star checked"></i></li>
+            <li><i class="fa fa-star"></i></li>
+        </ul>
+        <div class="buttons">
+        <a class="buy" href="file:///C:/Users/user/FC/fc/payment.html"><button class="buy-now-button">Buy Now</button></a>
+        <button class="cart" onclick="addToCart('Plate', 100.0,'pic6.jpg')">Add to cart</button>
+       </div> 
+    </div>
+
+
+       <div class="Content">
+        <img src="pic7.jpg">
+        <h3>Pentagon container</h3>
+        <p>Unique shaped bowl used to store items</p>
+        <h6>₹ 90.0</h6>
+        <ul>
+            <li><i class="fa fa-star checked"></i></li>
+            <li><i class="fa fa-star checked"></i></li>
+            <li><i class="fa fa-star checked"></i></li>
+            <li><i class="fa fa-star"></i></li>
+            <li><i class="fa fa-star"></i></li>
+        </ul>
+        <div class="buttons">
+        <a class="buy" href="file:///C:/Users/user/FC/fc/payment.html"><button class="buy-now-button">Buy Now</button></a>
+        <button class="cart" onclick="addToCart('Pentagon container', 90.0,'pic7.jpg')">Add to cart</button>
+       </div>
+    </div>
+
+
+       <div class="Content">
+        <img src="pic8.jpg">
+        <h3>Mini cups</h3>
+        <p>cute little bowls has capacity to store 50gm</p>
+        <h6>₹ 50.0</h6>
+        <ul> <li><i class="fa fa-star checked"></i></li>
+            <li><i class="fa fa-star checked"></i></li>
+            <li><i class="fa fa-star checked"></i></li>
+            <li><i class="fa fa-star checked"></i></li>
+            <li><i class="fa fa-star"></i></li>
+        </ul>
+        <div class="buttons">
+        <a class="buy" href="file:///C:/Users/user/FC/fc/payment.html"><button class="buy-now-button">Buy Now</button></a>
+        <button class="cart" onclick="addToCart('Mini Cups', 50.0,'pic8.jpg')">Add to cart</button>
+
+       </div>
+    </div>
+
+
+       <div class="Content">
+        <img src="pic9.jpg">
+        <h3>Round pot</h3>
+        <p>Used for gardening with 5cm height,4cm radius width and rope as hanger</p>
+        <h6>₹ 120.0</h6>
+        <ul>
+            <li><i class="fa fa-star checked"></i></li>
+            <li><i class="fa fa-star checked"></i></li>
+            <li><i class="fa fa-star checked"></i></li>
+            <li><i class="fa fa-star checked"></i></li>
+            <li><i class="fa fa-star checked"></i></li>
+        </ul>
+        <div class="buttons">
+        <a class="buy" href="file:///C:/Users/user/FC/fc/payment.html"><button class="buy-now-button">Buy Now</button></a>
+        <button class="cart" onclick="addToCart('Round Pot', 120.0,'pic9.jpg')">Add to cart</button>
+       </div>
+    </div>
+
+
+       <div class="Content">
+        <img src="pic10.jpg">
+        <h3>Mini stools(2)</h3>
+        <p>So interesting product for home decor and kids playing,pack of 2</p>
+        <h6>₹ 60.0</h6>
+        <ul>
+            <li><i class="fa fa-star checked"></i></li>
+            <li><i class="fa fa-star checked"></i></li>
+            <li><i class="fa fa-star checked"></i></li>
+            <li><i class="fa fa-star checked"></i></li>
+            <li><i class="fa fa-star checked"></i></li>
+        </ul>
+        <div class="buttons">
+        <a class="buy" href="file:///C:/Users/user/FC/fc/payment.html"><button class="buy-now-button">Buy Now</button></a>
+        <button class="cart" onclick="addToCart('Mini Stools(2)', 60.0,'pic10.jpg')">Add to cart</button>
+       </div>
+    </div>
+
+
+       <div class="Content">
+        <img src="pic11.jpg">
+        <h3>Gardening pots</h3>
+        <p>Used to grow various cactus, pack of 3 with different shapes</p>
+        <h6>₹ 200.0</h6>
+        <ul>
+            <li><i class="fa fa-star checked"></i></li>
+            <li><i class="fa fa-star checked"></i></li>
+            <li><i class="fa fa-star checked"></i></li>
+            <li><i class="fa fa-star checked"></i></li>
+            <li><i class="fa fa-star"></i></li>
+        </ul>
+        <div class="buttons">
+        <a class="buy" href="file:///C:/Users/user/FC/fc/payment.html"><button class="buy-now-button">Buy Now</button></a>
+        <button class="cart" onclick="addToCart('Gardening Pots', 200.0,'pic11.jpg')">Add to cart</button>
+       </div> 
+    </div>
+
+
+       <div class="Content">
+        <img src="pic12.jpg">
+        <h3>Container with rope handles</h3>
+        <p>can store fruits or vegetables capacity is 500gm</p>
+        <h6>₹ 90.0</h6>
+        <ul>
+            <li><i class="fa fa-star checked"></i></li>
+            <li><i class="fa fa-star checked"></i></li>
+            <li><i class="fa fa-star checked"></i></li>
+            <li><i class="fa fa-star checked"></i></li>
+            <li><i class="fa fa-star checked"></i></li>
+        </ul>
+        <div class="buttons">
+        <a class="buy" href="file:///C:/Users/user/FC/fc/payment.html"><button class="buy-now-button">Buy Now</button></a>
+        <button class="cart" onclick="addToCart('Container with rope handles', 90.0,'pic12.jpg')">Add to cart</button>
+       </div>
+    </div> 
+
+
+       <div class="Content">
+        <img src="pic13.jpg">
+        <h3>Boxes</h3>
+        <p>used to store little quantity of items and can also be used for snacks box for kids</p>
+        <h6>₹ 99.0</h6>
+        <ul>
+            <li><i class="fa fa-star checked"></i></li>
+            <li><i class="fa fa-star checked"></i></li>
+            <li><i class="fa fa-star checked"></i></li>
+            <li><i class="fa fa-star checked"></i></li>
+            <li><i class="fa fa-star checked"></i></li>
+        </ul>
+        <div class="buttons">
+        <a class="buy" href="file:///C:/Users/user/FC/fc/payment.html"><button class="buy-now-button">Buy Now</button></a>
+        <button class="cart" onclick="addToCart('Boxes', 99.0,'pic13.jpg')">Add to cart</button>
+       </div> 
+    </div>
+
+
+    </div>
+
+    <script>
+        function Payment() {
+            window.location.replace("file:///C:/Users/user/FC/fc/payment.html");
+        }
+
+        function SignOut() {
+         
+            window.location.replace("file:///C:/Users/user/FC/fc/sign%20in.html");
+        }
+
+      
+        function addToCart(productName, price, image) {
+           
+            let cart = localStorage.getItem('cart');
+            cart = cart ? JSON.parse(cart) : [];
+
+            const existingProduct = cart.find(item => item.productName === productName);
+
+            if (existingProduct) {
+               
+                existingProduct.quantity += 1;
+            } 
+            else {
+                cart.push({ productName, price, image, quantity: 1 });
+            }
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert("Item added successfully!");
+        }
+
+    </script>
+</body>
+</html>
